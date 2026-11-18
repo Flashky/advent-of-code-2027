@@ -1,32 +1,65 @@
-# 🎄 Advent of Code - Java template
+# 🎄 Advent of Code 2027
 
-Template that scaffolds a complete Advent of Code setup generating:
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d943286044bd4df895e14b61c70fb9d0)](https://app.codacy.com/gh/Flashky/advent-of-code-2027/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/d943286044bd4df895e14b61c70fb9d0)](https://app.codacy.com/gh/Flashky/advent-of-code-2027/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 
-- A public solutions repository
-- A private inputs repository (which is wired as a git submodule at the solutions repo)
+- [Day 1](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day01)
+- [Day 2](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day02)
+- [Day 3](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day03)
+- [Day 4](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day04)
+- [Day 5](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day05)
+- [Day 6](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day06)
+- [Day 7](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day07)
+- [Day 8](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day08)
+- [Day 9](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day09)
+- [Day 10](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day10)
+- [Day 11](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day11)
+- [Day 12](https://github.com/Flashky/advent-of-code-2027/tree/master/src/main/java/com/adventofcode/flashk/day12)
 
-## Requirements
+## Required secrets
 
-Configure the following secrets in this repository:
+The repository must have the following secrets declared under both **Actions** and **Dependabot** secrets:
 
 | Secret | Purpose |
 |---|---|
-| `PAT_TOKEN` | Creates the repositories |
-| `CODACY_API_TOKEN` | Registers the projects in Codacy |
-| `AOC_APP_CLIENT_ID` | GitHub App used for provisioning the generated repository |
-| `AOC_APP_PRIVATE_KEY` | GitHub App provisioning private key |
-| `AOC_CI_APP_CLIENT_ID` | GitHub App used for the generated repository to use for CI build workflows (only `read` permissions) |
-| `AOC_CI_APP_PRIVATE_KEY` | GitHub App CI build private key |
+| `AOC_CI_APP_CLIENT_ID` | Client ID of the GitHub App to be used by CI build workflows |
+| `AOC_CI_APP_PRIVATE_KEY` | Private key of the GitHub App CI to be used by CI build workflows |
+| `CODACY_PROJECT_TOKEN` | *(Optional)* Needed for sending reports to Codacy. No reports will be sent if it is not present |
 
-## 🚀 Usage
+The only **required permission** the GitHub App must have is **Repository Contents** (`read`). 
+The GitHub App must be installed in both the solutions and data repository so the build can successfully complete.
+  
+These secrets will be **provisioned automatically** if the repo has been created using the template repository [repository creation workflow](https://github.com/Flashky/advent-of-code-2027/actions/workflows/create-repo.yml).
 
-1. Go to **Actions → Create AoC repository → Run workflow**.
-2. Enter the year (e.g. `2026`).
+## Cloning this repository
 
-**And that's pretty much it!**
-Workflows will generate and auto-merge a pull request on each repository to scaffold everything automatically.
+Clone with data repository:
 
-This README exists only in the template. Generated repositories get their own.
+```bash
+git clone https://github.com/Flashky/advent-of-code-2027.git --recurse-submodules
+```
+
+The data repository is private, so use the following command if you are not the repository owner:
+
+```bash
+git clone https://github.com/Flashky/advent-of-code-2027.git
+```
+
+## Update data submodule
+
+Use the following command to update the data submodule if there are any remote changes:
+
+```bash
+git submodule update --recursive --remote
+```
+
+## Re-attach local repository
+
+If the local repo becomes detached, execute:
+
+```bash
+git checkout master
+```
 
 ## About
 
